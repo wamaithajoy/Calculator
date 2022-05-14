@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnadd:Button
     lateinit var btnsubtract:Button
     lateinit var btnmodulus:Button
-    lateinit var btndivide:Button
+    lateinit var btnmultiply:Button
     lateinit var tvresult:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         btnadd=findViewById(R.id.btnadd)
         btnsubtract=findViewById(R.id.btnsubtract)
         btnmodulus=findViewById(R.id.btnmodulus)
-        btndivide=findViewById(R.id.btndivide)
+        btnmultiply=findViewById(R.id.btnmultiply)
         tvresult=findViewById(R.id.tvresult)
         btnadd.setOnClickListener {
             var number1=etnumber1.text.toString().toInt()
@@ -40,10 +40,10 @@ class MainActivity : AppCompatActivity() {
             var number2=etnumber2.text.toString().toInt()
             modulus(number1, number2)
         }
-        btndivide.setOnClickListener {
+        btnmultiply.setOnClickListener {
             var number1=etnumber1.text.toString().toInt()
             var number2=etnumber2.text.toString().toInt()
-            division(number1, number2)
+          multiplication(number1, number2)
         }
     }
     fun addition(number1:Int,number2:Int){
@@ -58,8 +58,8 @@ class MainActivity : AppCompatActivity() {
       var modulus=number1%number2
        tvresult.text=modulus.toString()
    }
-   fun division(number1:Int,number2:Int){
-      var modulus=number1/number2
+   fun multiplication(number1:Int,number2:Int){
+      var modulus=number1*number2
        tvresult.text=modulus.toString()
    }
 }
